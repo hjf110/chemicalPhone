@@ -23,6 +23,12 @@
 			"style": {
 				"navigationBarTitleText": "个人汇总"
 			}
+		},
+		{
+			"path": "pages/push/pushIndex",
+			"style": {
+				"navigationBarTitleText": "人员列表"
+			}
 		}
 		
 	],
