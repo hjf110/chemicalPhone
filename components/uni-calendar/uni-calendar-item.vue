@@ -4,7 +4,8 @@
 		'uni-calendar-item--isDay':calendar.fullDate === weeks.fullDate && weeks.isDay,
 		'uni-calendar-item--checked':(calendar.fullDate === weeks.fullDate && !weeks.isDay) ,
 		'uni-calendar-item--multiple': weeks.multiple
-		}" @click="choiceDate(weeks)">
+		}"
+	 @click="choiceDate(weeks)">
 		<view class="uni-calendar-item__weeks-box-item">
 			<text v-if="selected&&weeks.extraInfo" class="uni-calendar-item__weeks-box-circle"></text>
 			<text class="uni-calendar-item__weeks-box-text" :class="{
@@ -114,7 +115,6 @@
 		height: 8px;
 		border-radius: 8px;
 		background-color: #dd524d;
-
 	}
 
 	.uni-calendar-item--disable {
