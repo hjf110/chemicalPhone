@@ -2,8 +2,8 @@
 export default {
 	globalData: {
 		user:{},
-		name:'唐尹龙',//用户姓名
-		type:'常白班',//值班类型
+		name:'',//用户姓名
+		type:'',//值班类型
 		unionid: '251827673421699472',//用户唯一id
 		showType:'',
 	},

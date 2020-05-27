@@ -28,7 +28,7 @@ export default {
 			tabList: [1, 2],
 			activeTab: 1,
 			items: ['我的概况', '我的月汇总'],
-			current: 0
+			current: 0,
 		};
 	},
 	created() {

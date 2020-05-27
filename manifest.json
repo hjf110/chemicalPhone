@@ -62,6 +62,7 @@
         "devServer" : {
             "https" : false
         },
-        "title" : "江宁化工"
+        "title" : "江宁化工",
+        "domain" : ""
     }
 }
