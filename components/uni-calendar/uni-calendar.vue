@@ -135,7 +135,9 @@
 		watch: {
 			selected(newVal) {
 				this.cale.setSelectInfo(this.nowDate.fullDate, newVal)
-				this.weeks = this.cale.weeks
+				this.weeks = this.cale.weeks;
+				// console.log('sssss-------',this.selected);
+				// console.log('this.weeks-------',this.weeks);
 			}
 		},
 		created() {

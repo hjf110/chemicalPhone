@@ -89,6 +89,7 @@
 							this.dateInfo.push({
 								date: item.workdate,
 								info: this.getStateName(item.state),
+								dateState:item.state,
 								data: {
 									onworktime: item.onworktime ? item.onworktime.split(' ')[1] : '', //上班时间
 									offworktime: item.offworktime ? item.offworktime.split(' ')[1] : '' //下班时间

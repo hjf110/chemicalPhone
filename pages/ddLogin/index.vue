@@ -52,7 +52,7 @@ export default {
 	},
 	mounted() {
 		const _this = this;
-		// this.testLogin();
+		this.testLogin();
 		uni.showLoading({
 			title: '自动登录中'
 		});
