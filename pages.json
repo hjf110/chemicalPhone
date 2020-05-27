@@ -27,7 +27,7 @@
 		{
 			"path": "pages/push/pushIndex",
 			"style": {
-				"navigationBarTitleText": "人员列表"
+				"navigationBarTitleText": "考勤统计"
 			}
 		}
 		

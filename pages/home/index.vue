@@ -15,7 +15,7 @@ import sTabs from '../../components/s-ui/s-tabs';
 import sTab from '../../components/s-ui/s-tab';
 import myInfo from '../index/index.vue';
 import myMounth from '../mounth/index.vue';
-
+	const app = getApp();
 export default {
 	components: {
 		sTabs,
@@ -31,7 +31,10 @@ export default {
 			current: 0
 		};
 	},
-	created() {},
+	created() {
+		let name  = app.$options.globalData.name
+		this.items = [`${name}的概况`,`${name}的月汇总`]
+	},
 	mounted() {},
 	methods: {
 		onClickItem(e) {
