@@ -9,11 +9,11 @@ export default {
 	},
 	onLaunch() {
 		console.log('App Launch');
-		if(!this.globalData.name){
-			uni.redirectTo({
-				url: './pages/ddLogin/index'
-			});
-		}
+		// if(!this.globalData.name){
+		// 	uni.redirectTo({
+		// 		url: './pages/ddLogin/index'
+		// 	});
+		// }
 	},
 	onShow() {
 		console.log('App Show');
