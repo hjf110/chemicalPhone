@@ -6,6 +6,7 @@
 				<view style="overflow-y: auto;" v-show="current === 0"><my-info /></view>
 				<view style="overflow-y: auto;" v-show="current === 1"><my-mounth /></view>
 			</view>
+			<!-- <button class="btn" @click="handlePeople()">选择人员</button> -->
 		</view>
 	</view>
 </template>
@@ -47,6 +48,11 @@ export default {
 		},
 		render(index) {
 			console.log('render:', index);
+		},
+		handlePeople(){
+			uni.navigateTo({
+				url: '../../pages/push/pushIndex'
+			});
 		}
 	}
 };
@@ -55,5 +61,12 @@ export default {
 <style scoped>
 .content {
 	margin-top: 10px;
+}
+
+.btn{
+	margin: 15px auto;
+	width: 60%;
+	color: #fff;
+	background-color: #007AFF;
 }
 </style>
