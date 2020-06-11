@@ -19,14 +19,9 @@
 		</uni-list>
 		<!-- 一般用法 -->
 		<uni-list>
-			<!-- <uni-list-item title="平均工时"  rightText="8.7小时" /> -->
-			<uni-list-item title="出勤天数" :rightText="checkInfo.chuqin + ' 天'" />
-			<!-- <uni-list-item title="出勤班次" rightText="共2次" /> -->
-			<uni-list-item title="休息天数" :rightText="checkInfo.xiuxi + ' 次'" />
-			<uni-list-item title="迟到" :rightText="checkInfo.chidao + ' 次'" />
-			<uni-list-item title="早退" :rightText="checkInfo.zaotui + ' 次'" />
-			<uni-list-item title="缺卡" :rightText="checkInfo.queqin + ' 次'" />
-			<uni-list-item title="请假" :rightText="checkInfo.qingjia + ' 次'" />
+			<template  v-for="(list,index) in totalState">
+				<uni-list-item :key="index" :title="stateName[list.state]"  :rightText="list.num + ' 天'" />
+			</template>
 		</uni-list>
 	</view>
 </template>
@@ -45,14 +40,28 @@ export default {
 			},
 			isClick: true,
 			href: 'https://uniapp.dcloud.io/collocation/pages?id=easycom',
-			checkInfo: {
-				chuqin: '0',
-				xiuxi: '0',
-				chidao: '0',
-				zaotui: '0',
-				queqin: '0',
-				qingjia: '0'
-			}
+			stateName:{
+				 1: '缺勤',
+				 2: '出勤',
+				 3: '迟到',
+				 4: '早退',
+				 5: '休息',
+				 6: '迟到早退',
+				 7: '上午缺勤',
+				 8: '下午缺勤',
+				 10: '事假',
+				 11: '调休',
+				 12: '病假',
+				 13: '产假',
+				 14: '陪产假',
+				 15: '婚假',
+				 16: '例假',
+				 17: '丧假',
+				 18: '年假',
+				 19: '出差',
+				 20: '外出',
+			},
+			totalState:[]
 		};
 	},
 	created() {
@@ -68,9 +77,6 @@ export default {
 		console.log(weekList);
 		//alert(`${App.$options.globalData.unionid}-------${ weekList[0]}=======${ weekList[1]}`);
 		this.getInfo({ begin: weekList[0], end: weekList[1] }, 2);
-		
-		
-		
 	},
 	methods: {
 		//获取具体的考勤信息
@@ -93,15 +99,7 @@ export default {
 			main.list({ userUnionid:App.$options.globalData.unionid, workDateBegin, workDateEnd })
 				.then(res => {
 					console.log('调用成功', res);
-					if (res) {
-						for (let key in this.checkInfo) {
-							this.checkInfo[key] = res[key] ? res[key].toString() : '0';
-						}
-					} else {
-						for (let key in this.checkInfo) {
-							this.checkInfo[key] = '0';
-						}
-					}
+					this.totalState = res
 				})
 				.catch(err => {
 					alert(err);

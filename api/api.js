@@ -11,7 +11,7 @@ const api = {
 		dplist:baseURL+'dd-department/getDepartments',//钉钉部门列表
 	},
 	workReport:{//考勤记录管理及相关接口
-		report:baseURL + 'work-record/report',//考勤报表
+		report:baseURL + 'work-record/reportnew',//考勤报表
 		list:baseURL +'work-record/list',//考勤列表
 	}
 }
